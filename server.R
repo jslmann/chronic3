@@ -24,8 +24,8 @@ shinyServer(
       gvisMotionChart(chronic.r(),
                       "Disease",
                       timevar="Fiscal.Year",
-                      xvar="Population_mean",
-                      yvar="Incidence_mean",
+                      xvar="Physician.Visit.with.Disease..Person.Count",
+                      yvar="Hospitalization.with.Disease..Days.Stay",
                       date.format="%Y")
     })
     

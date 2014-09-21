@@ -1,4 +1,7 @@
 library(shiny)
+#to do: 
+# change x, y initial values
+# make slide show
 
 # Define UI for dataset viewer application
 shinyUI(
