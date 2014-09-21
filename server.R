@@ -14,7 +14,7 @@ shinyServer(
       a <- subset(molten.chronic,
                   Gender %in% input$gender )
       a <- droplevels(a)
-      a <- cast(a, Disease + Fiscal.Year ~ variable, c(mean,sd))
+      a <- cast(a, Disease + Fiscal.Year ~ variable, mean)
     
       return(a)
     })
@@ -24,8 +24,8 @@ shinyServer(
       gvisMotionChart(chronic.r(),
                       "Disease",
                       timevar="Fiscal.Year",
-                      xvar="Physician.Visit.with.Disease..Person.Count",
-                      yvar="Hospitalization.with.Disease..Days.Stay",
+                      xvar="Physician.Visit.with.Disease..Visit.Count_mean",
+                      yvar="Mortality.with.Disease_mean",
                       date.format="%Y")
     })
     
