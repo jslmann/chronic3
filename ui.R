@@ -5,18 +5,18 @@ library(shiny)
 
 # Define UI for dataset viewer application
 shinyUI(
-  pageWithSidebar(
+  bootstrapPage(
     # Application title
     headerPanel("Canadian Chronic Disease Relationships"), 
-    sidebarPanel(
-      checkboxGroupInput("gender", "Gender:",
-                         c("Male" = "M",
-                           "Female" = "F"),
-                         selected = c("M","F"))
-    ),   
+ 
     mainPanel(
       tabsetPanel(
-        tabPanel("Chart",h4("Chronic Disease Chart"),htmlOutput("view")),
+        tabPanel("Chart",h4("Chronic Disease Chart"),
+                 checkboxGroupInput("gender", "Gender:",
+                                    c("Male" = "M",
+                                      "Female" = "F"),
+                                    selected = c("M","F")),
+                 htmlOutput("view")),
         tabPanel("Data Description",
                  p("A complete description of the variables can be found in the
 the document: Contents of the Canadian Chronic Disease Surveillance System (CCDSS) 
